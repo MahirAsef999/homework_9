@@ -11,13 +11,12 @@
         <h1>Search Products at Mahir's Electronics</h1>
     </header>
 
- 
     <form method="get" action="index.php">
         <input type="text" name="search" placeholder="Enter product category..." required>
         <button type="submit">Search</button>
     </form>
 
-    
+
     <div class="product-list">
         <?php if (isset($products) && !empty($products)): ?>
             <?php foreach ($products as $product): ?>
@@ -25,11 +24,11 @@
                     <strong><?php echo htmlspecialchars($product['name']); ?></strong><br>
                     Category: <?php echo htmlspecialchars($product['category']); ?><br>
                     Price: $<?php echo number_format($product['price'], 2); ?><br>
-                    <a href="products/<?php echo $product['id']; ?>">View Details</a>
+                    <a href="products/<?php echo $product['id']; ?>">View Details</a>  
                 </div>
             <?php endforeach; ?>
         <?php elseif (isset($productDetails) && !empty($productDetails)): ?>
-            
+    
             <div class="product-detail">
                 <h2><?php echo htmlspecialchars($productDetails[0]['name']); ?></h2>
                 <p>Category: <?php echo htmlspecialchars($productDetails[0]['category']); ?></p>
