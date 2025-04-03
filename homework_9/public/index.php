@@ -38,6 +38,6 @@ if ($uriArray[1] === 'products' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
 
-include '../public/assets/views/notFound.html';
+include '../public/views/notFound.html';
 exit();
 ?>
