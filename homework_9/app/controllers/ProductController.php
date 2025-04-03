@@ -29,7 +29,7 @@ class ProductController {
     public function productDetailsView($id) {
         $product = new Product();
         $productDetails = $product->getProductById($id);
-        include '../public/views/productDetails.php';  
+        include '../public/views/homework9.html'; 
     }
 }
 ?>
