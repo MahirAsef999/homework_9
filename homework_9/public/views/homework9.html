@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Products - Mahir's Electronics</title>
+    <link rel="stylesheet" href="views/style.css">
+</head>
+<body>
+    <header>
+        <h1>Search Products at Mahir's Electronics</h1>
+    </header>
+
+ 
+    <form method="get" action="index.php">
+        <input type="text" name="search" placeholder="Enter product category..." required>
+        <button type="submit">Search</button>
+    </form>
+
+    
+    <div class="product-list">
+        <?php if (isset($products) && !empty($products)): ?>
+            <?php foreach ($products as $product): ?>
+                <div class="product">
+                    <strong><?php echo htmlspecialchars($product['name']); ?></strong><br>
+                    Category: <?php echo htmlspecialchars($product['category']); ?><br>
+                    Price: $<?php echo number_format($product['price'], 2); ?><br>
+                    <a href="products/<?php echo $product['id']; ?>">View Details</a>
+                </div>
+            <?php endforeach; ?>
+        <?php elseif (isset($productDetails) && !empty($productDetails)): ?>
+            
+            <div class="product-detail">
+                <h2><?php echo htmlspecialchars($productDetails[0]['name']); ?></h2>
+                <p>Category: <?php echo htmlspecialchars($productDetails[0]['category']); ?></p>
+                <p>Price: $<?php echo number_format($productDetails[0]['price'], 2); ?></p>
+            </div>
+        <?php elseif (isset($category)): ?>
+            <p>No products found in this category: <?php echo htmlspecialchars($category); ?>.</p>
+        <?php endif; ?>
+    </div>
+</body>
+</html>

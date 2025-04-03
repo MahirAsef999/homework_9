@@ -1,0 +1,75 @@
+﻿CISC 3300 S25 
+Homework 9 
+
+1. What are relationships in SQL? Joins? 
+
+Relationships in SQL are the connections between tables in a database. These are usually made using primary keys (PK) and foreign keys (FK). A primary key uniquely identifies each row in a table, while a foreign key in one table refers to the primary key of another table, linking the two.There are three main types of relationships. One-to-one relationship means one record in a table relates to one record in another table. One-to-many relationship means that one record in a table can relate to many records in another table (an example of it is one customer has many orders). Many-to-many relationship means that many records in one table relate to many records in another table, often managed through a third table. Joins are operations that combine data from multiple tables based on these relationships. Joins use related columns (often primary and foreign keys) to pull together related data from different tables into one result.
+
+
+2. How do joins and relationships interact? 
+
+Joins and relationships work together to help us pull related data from different tables. In a database, tables are often connected through primary keys (unique identifiers) and foreign keys (which reference primary keys in other tables). Joins let us combine data from these connected tables in useful ways. For example, an inner join brings together rows from two tables where the values match, while outer joins bring all rows from one table and only the matching rows from the other table, filling in empty spots with NULLs where there's no match. Joins allow SQL to fetch the data in a structured way, based on how the tables are related, making it easier to get the information needed from different places.
+
+
+
+
+
+
+3. What’s a PDO? a DSN? 
+
+PDO (PHP Data Objects) is a tool in PHP that helps connect to and work with different databases like MySQL or PostgreSQL. It provides a simple, consistent way to interact with these databases. One of its key features is prepared statements, which help protect website from security issues like SQL injection and also make queries run faster. The DSN (Data Source Name) is a string that tells PDO how to connect to a specific database. It includes information like the type of database, where it’s located, the port number, and the name of the database. PDO uses this information to securely connect the PHP application to the database.
+
+
+4. What are prepared statements? Why do we need them? 
+
+Prepared statements are a feature in PDO and other database libraries that allow SQL queries to be executed securely and efficiently. Instead of directly inserting user input into the SQL query (which can leave your app open to security risks like SQL injection), prepared statements use placeholders in the query. The query is first prepared with placeholders, and later, the actual user input is added to those placeholders. This helps protect the user’s app from SQL injection by treating user input as data, not code. It also makes the process faster, especially if the same query is run many times with different data. Prepared statements are a key part of building secure and fast database operations in modern apps.
+
+
+5. What does an .env file do? 
+
+An .env file is used to store important settings and information, like database login details, API keys, and other configuration settings, outside of the application's code. This helps developers manage different settings for different environments, such as development, staging, or production, without putting sensitive information directly in the code. By keeping this data in the .env file, it’s easier to update and change settings without risking exposure through version control systems like Git. The .env file is loaded into the application when it runs, and the settings become accessible through environment variables, keeping sensitive data secure and separate from the rest of the code.
+
+
+6. Create a PHP project in an MVC style. It should have the ability to search for a product type(use your fictitious business for inspiration), from a MySQL database, and display it. Add some basic styling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Homework 5
+In class 17
+
+
+
+
+
+
+Gaming Laptop - 799.99
+Wireless Headphones - 49.99
+Mechanical Keyboard - 99.99
+iPhone 16 - 699.99
+Gaming Chair - 299.99
+
+
+
+
+Name -Category - Price 
+Acer Laptop - Laptop - 799.99
+MacBook Air M2 - Laptop- 999.99
+iPhone 16 - Phone -  849.99
+iPhone 13 - Phone - 599.99
